@@ -27,9 +27,8 @@ class Student
   end
 
   def school_supplies
-    SchoolSupply.all.select{|supply| supply.student == self}
+    SchoolSupply.all.select do |supply|
+      supply.student == self
+    end
   end
-
-
-
 end

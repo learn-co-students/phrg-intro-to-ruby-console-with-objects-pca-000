@@ -9,16 +9,12 @@ class SchoolSupply
     @student = student
     @@all << self
   end
+
   def self.all
     @@all
   end
 
-  def student
-    @student
-  end
-
   def self.find_all_by_kind(kind)
-    @@all.select { |item| item.kind == kind}
+    all.select { |item| item.kind == kind }
   end
-
 end

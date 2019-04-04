@@ -14,10 +14,12 @@ class Course
   end
 
   def self.find_by_subject(subject)
-    @@all.find { |item| item.subject == subject}
+    all.find { |item| item.subject == subject}
   end
 
   def self.all_subjects
+    self.all.map { |course| course.subject }
+
   end
 
   def enrollments
@@ -25,7 +27,8 @@ class Course
   end
 
   def class_list
-    enrollments.map {|students| students.student.full_name}
+    enrollments.map do |students|
+      students.student.full_name
+    end
   end
-
 end

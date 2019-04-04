@@ -5,14 +5,13 @@ class Enrollment
   @@all = []
 
   def initialize (student, course, semester)
-      @student = student
-      @course = course
-      @semester = semester
-      @@all << self
+    @student = student
+    @course = course
+    @semester = semester
+    @@all << self
   end
 
   def self.all
     @@all
   end
-
 end

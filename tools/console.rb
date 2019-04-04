@@ -74,4 +74,7 @@ raise "Student#school_supplies did not the correct school_supplies" unless amy.s
 raise "SchoolSupply.find_all_by_kind(kind) did not return a collection of SchoolSupply instances" unless SchoolSupply.find_all_by_kind("Pencil").is_a?(Array) && SchoolSupply.find_all_by_kind("Pencil").first.is_a?(SchoolSupply)
 raise "SchoolSupply.find_all_by_kind(kind) did not return the correct collection of school_supplies" unless SchoolSupply.find_all_by_kind("Text Book").first == school_supply6 && SchoolSupply.find_all_by_kind("Pen").length == 2 && SchoolSupply.find_all_by_kind("Pen").include?(school_supply5) && SchoolSupply.find_all_by_kind("Pen").include?(school_supply2)
 
+raise "Course.all_subjects returns a collection of strings" unless Course.all_subjects.is_a?(Array) && Course.all_subjects.first.is_a?(String)
+raise  "Course.all_subjects returns all the course subjects" unless Course.all_subjects.include?("Geometry") && Course.all_subjects.include?("European History") && Course.all_subjects.include?("Poetry 101")
+
 binding.pry
